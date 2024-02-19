@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: white;
+      }
+      audio {
+        display: none;
+      }
+      marquee {
+        width: 200px;
+        height: 150px;
+      }
+      .extend {
+        width: 2000px;
+        padding: 10px;
+        text-align: center;
+        border: 1 px solid black;
+        background-color: black;
+        color: white;
+        box-shadow: 3px 9px 4px rgba(0, 0, 0, 0.5);
+        transition: box-shadow 0.5s ease;
+      }
+      button:hover {
+        box-shadow: 0 2px 8px rgba(0, 123, 255, 0.5);
+        color: lightblue;
+      }
+      #controller {
+        background-color: black;
+        color: white;
+        text-align: center;
+        width: 120px;
+        float: left;
+      }
+      .volc {
+        .volc::-webkit-slider-thumb {
+          background-color: #007bff;
+          border: 2px solid #007bff;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    </style>
+    <script>
+      alert("Must pause the Audio,When You Switched To new Song");
+      var audio;
+      function show(id) {
+        audio = document.getElementById(id);
+        audio.play();
+      }
+
+      audio = document.getElementById("m");
+      function change(id) {
+        const check = document.getElementById(id);
+        if (check) {
+          var p = document.getElementById(id);
+          if (audio.paused) {
+            audio.play();
+            p.textContent = "pause";
+          } else {
+            audio.pause();
+            p.textContent = "play";
+          }
+        } else {
+          var volControl = document.querySelector("." + id);
+          audio.volume = volControl.value / 17;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1>Tamil Songs</h1>
+    </center>
+    <center>
+      <button id="controller" onclick="change('controller')">play/pause</button>
+      <button style="float: right">
+        <label for="volc">Volume</label
+        ><input
+          type="range"
+          class="volc"
+          min="1"
+          max="10"
+          value="4"
+          step="1"
+          oninput="change('volc')"
+        />
+      </button>
+    </center>
+    <marquee direction="up" style="color: purple">Wrap the Songs🎧</marquee>
+    <audio controls id="m">
+      <source
+        src="c:\Users\aru70\Downloads\songs\Mudhal-Murai.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <button type="button" class="extend" onclick="show('m')">
+      Mudhal_Murai
+    </button>
+    <br />
+    <br />
+    <br />
+    <button type="button" class="extend" onclick="show('en')">
+      Enna oru Enna Oru
+    </button>
+    <audio controls id="en">
+      <source
+        src="c:\Users\aru70\Downloads\songs\Enna-Oru-Enna-Oru-MassTamilan.com.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <br />
+    <br />
+    <br />
+    <button type="button" class="extend" onclick="show('ka')">
+      Kanave-Kanave
+    </button>
+    <audio id="ka" controls>
+      <source
+        src="c:\Users\aru70\Downloads\songs\Kanave-Kanave-MassTamilan.com.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <br />
+    <br />
+    <br />
+    <audio id="Be" controls>
+      <source
+        src="c:\Users\aru70\Downloads\songs\Beast-Mode-MassTamilan.so.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <button type="button" class="extend" onclick="show('Be')">Beast</button>
+    <br />
+    <br />
+    <br />
+    <button type="button" onclick="show('vaathi_coming')" class="extend">
+      vaathi_coming_othu
+    </button>
+    <audio id="vaathi_coming" controls>
+      <source
+        src="c:\Users\aru70\Downloads\songs\Vaathi-Coming-MassTamilan.io.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <br />
+    <br />
+    <br />
+    <button type="button" onclick="show('ne')" class="extend">
+      Neethanae-Neethane
+    </button>
+    <audio id="ne" controls>
+      <source
+        src="c:\Users\aru70\Downloads\songs\Neethanae-Neethane-MassTamilan.com.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <br />
+    <br />
+    <br />
+    <button type="button" onclick="show('ma')" class="extend">
+      Master-the-Blaster
+    </button>
+    <audio id="ma" controls>
+      <source
+        src="c:\Users\aru70\Downloads\songs\Master-the-Blaster-MassTamilan.io.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <br />
+    <br />
+    <br />
+    <button type="button" onclick="show('va')" class="extend">
+      Vaathi-Raid
+    </button>
+    <audio id="va" controls>
+      <source
+        src="c:\Users\aru70\Downloads\songs\Vaathi-Raid-MassTamilan.io.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <br />
+    <br />
+    <br />
+    <button type="button" onclick="show('ki')" class="extend">
+      King-of-The-Sea_VadaChennai
+    </button>
+    <audio id="ki" controls>
+      <source
+        src="c:\Users\aru70\Downloads\songs\King-Of-The-Sea-MassTamilan.com.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <br />
+    <br />
+    <br />
+    <audio id="me" controls>
+      <source
+        src="c:\Users\aru70\Downloads\songs\Mersal-Arasan-MassTamilan.com.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+    <button type="button" onclick="show('me')" class="extend">
+      Mersal Arasan
+    </button>
+  </body>
+</html>
